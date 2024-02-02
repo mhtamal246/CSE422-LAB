@@ -6,32 +6,32 @@ st=inpfile.readline()
 mk=inpfile.readline()
 std=st.split(" ")
 mrk=mk.split(" ")
+lst=[0]*N
+count=0
 
 for i in range(len(std)):
-    std[i]=int(std[i])
-for i in range(len(mrk)):
-    mrk[i]=int(mrk[i])
+    lst[i]= (int(std[i]),int(mrk[i]))
+print(lst)
 
-for i in range(len(std)):
+for i in range(len(lst)):
     lrg=i
-    for j in range(i,len(mrk)):
-        if mrk[j]>mrk[lrg]:
+    for j in range(i, len(lst)):
+        if lst[j][1]>lst[lrg][1]:
             lrg=j
-        if mrk[i]==mrk[j]:
-            if std[i]>std[j]:
-                tp=std[i]
-                std[i]=std[j]
-                std[j]=tp
-    temp=mrk[i]
-    mrk[i]=mrk[lrg]
-    mrk[lrg]=temp
+        if lst[j][1]==lst[i][1]:
+            if lst[i][0]>lst[j][0]:
+                print(lst[i][0])
+                tmp=lst[j]
+                lst[j]=lst[i]
+                lst[i]=tmp
 
-    tmp=std[i]
-    std[i]=std[lrg]
-    std[lrg]=tmp
+    temp=lst[i]
+    lst[i]=lst[lrg]
+    lst[lrg]=temp
+print(lst)
 
-for i in range(len(std)):
-    outfile.write(f"ID: {std[i]} Mark: {mrk[i]}\n")
+for i in range(len(lst)):
+    outfile.write(f"ID: {lst[i][0]} Mark: {lst[i][1]}\n")
 
 inpfile.close()
 outfile.close()
