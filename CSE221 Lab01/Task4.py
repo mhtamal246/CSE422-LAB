@@ -64,7 +64,7 @@ for i in range(len(asci)):
 
     tpm=time[i]
     time[i]=time[sml]
-    time[sml]=tpmm
+    time[sml]=tpm
 
 for i in range(len(asci)):
     outfile.write(f"{name[i]} will departure for {location[i]} at {time[i]}\n")
