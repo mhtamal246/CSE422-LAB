@@ -13,5 +13,3 @@ for i in range(T):
         res=f"\n{num} is an Odd number"
         output_file.write(res)
 
-inpfile.close()
-outfile.close()
