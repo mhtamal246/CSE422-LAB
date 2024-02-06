@@ -16,3 +16,10 @@ for i in l1:
 for i in l2:
     lst2.append(int(i))
 
+lst1.extend(lst2)
+lst1.sort()
+
+outfile.write(f"{lst1}")
+
+inpfile.close()
+outfile.close()
