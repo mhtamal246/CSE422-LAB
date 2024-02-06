@@ -16,4 +16,3 @@ for i in l1:
 for i in l2:
     lst2.append(int(i))
 
-print(n1,n2,lst1,lst2)

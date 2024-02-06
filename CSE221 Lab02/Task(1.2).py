@@ -17,17 +17,16 @@ two=len(elems)-1
 idx1=None
 idx2=None
 
-for i in range(len(elems)):
+while one<two:
     tot=elems[one]+elems[two]
-    if one!=two:
-        if tot==sum:
-            idx1=one+1
-            idx2=two+1
-            break
-        if tot<sum:
-            one+=1
-        if tot>sum:
-            two-=1
+    if tot==sum:
+        idx1=one+1
+        idx2=two+1
+        break
+    if tot<sum:
+        one+=1
+    if tot>sum:
+        two-=1
 
 if idx1 and idx2!=None:
     res= f"{idx1} {idx2}"
