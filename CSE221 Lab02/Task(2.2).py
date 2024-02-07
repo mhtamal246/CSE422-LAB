@@ -15,31 +15,38 @@ for i in l1:
     lst1.append(int(i))
 for i in l2:
     lst2.append(int(i))
-
 one=0
 two=0
 mainlst=[]
-while True:
+flag=False
+while one <= len(lst1) and two <= len(lst2):
 
-    if one >= len(lst1) - 1 and two >= len(lst2) - 1:
-        break
-
-    elif one>=len(lst1)-1:
+    if one>=len(lst1):
         mainlst.extend(lst2[two:])
-        break
-    elif two>=len(lst2)-1:
+        flag=True
+    elif two>=len(lst2):
         mainlst.extend(lst1[one:])
-        break
+        flag=True
 
     else:
         if lst1[one]<lst2[two]:
             mainlst.append(lst1[one])
             one+=1
-        if lst1[one]>lst2[two]:
+        elif lst1[one]==lst2[two]:
+            mainlst.append(lst1[one])
+            one+=1
+        elif lst1[one]>lst2[two]:
             mainlst.append(lst2[two])
             two+=1
 
-outfile.write(f"{mainlst}")
+    if flag:
+        break
+res=""
+for i in mainlst:
+    res+=str(i)+" "
+res= res[:len(res)-1]
+
+outfile.write(f"{res}")
 
 inpfile.close()
 outfile.close()

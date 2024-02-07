@@ -19,7 +19,12 @@ for i in l2:
 lst1.extend(lst2)
 lst1.sort()
 
-outfile.write(f"{lst1}")
+res=""
+for i in lst1:
+    res+=str(i)+" "
+res= res[:len(res)-1]
+
+outfile.write(f"{res}")
 
 inpfile.close()
 outfile.close()
