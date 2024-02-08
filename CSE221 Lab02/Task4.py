@@ -36,16 +36,16 @@ point=0
 l=len(menlst)
 while cnt>=0:
     for i in range(l+1,len(lst)):
-        if point==len(menlst)-1:
+        if point>=len(menlst)-1:
             point=0
 
-        if menlst[point][1]<lst[i][0]:
+        if menlst[point][1]<=lst[i][0]:
             menlst[0]=lst[i]
             point+=1
             count+=1
             l+=1
 
-        if menlst[point][1]>lst[i][0]:
+        if menlst[point][1]>=lst[i][0]:
             menlst[1]=lst[i]
             point+=1
             count+=1
