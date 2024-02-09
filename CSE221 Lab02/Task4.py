@@ -3,7 +3,6 @@ outfile=open("output4.txt","w")
 inp=inpfile.readline()
 
 N,M=inp.split()
-
 N=int(N)
 M=int(M)
 lst=[]
@@ -16,40 +15,19 @@ for i in range(N):
 for i in range(len(lst)):
     sml=i
     for j in range(i+1,len(lst)):
-        if lst[i][1]>lst[j][1]:
+        if lst[j][1]<lst[sml][1]:
             sml=j
-    temp=lst[i]
-    lst[i]=lst[sml]
-    lst[sml]=temp
-print(lst)###########
-
-
+    lst[i],lst[sml]=lst[sml],lst[i]
+print(lst)
 menlst=[0]*M
-count=1*len(menlst)
-for i in range(len(menlst)):
-    menlst[i]=lst[i]
+count=0
 
-print(menlst)###################
-
-cnt=len(lst)
-point=0
-l=len(menlst)
-while cnt>=0:
-    for i in range(l+1,len(lst)):
-        if point>=len(menlst)-1:
-            point=0
-
-        if menlst[point][1]<=lst[i][0]:
-            menlst[0]=lst[i]
-            point+=1
+for work in lst:
+    start=work[0]
+    end=work[1]
+    for i in range(len(menlst)):
+        if menlst[i]<=start:
+            menlst[i]=end
             count+=1
-            l+=1
-
-        if menlst[point][1]>=lst[i][0]:
-            menlst[1]=lst[i]
-            point+=1
-            count+=1
-            l+=1
-    cnt-=1
-
-print(count)##################
+            break
+print(count)
