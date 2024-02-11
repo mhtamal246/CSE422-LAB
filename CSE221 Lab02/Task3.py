@@ -49,3 +49,6 @@ while c>=0:
 outfile.write(f"{count}\n")
 for i in range(len(mainlst)):
     outfile.write(f"{mainlst[i][0]} {mainlst[i][1]}\n")
+
+inpfile.close()
+outfile.close()
