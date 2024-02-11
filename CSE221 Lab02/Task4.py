@@ -20,23 +20,26 @@ for i in range(len(lst)):
     lst[i],lst[sml]=lst[sml],lst[i]
 
 menlst=[0]*M
-accept=[0]*M
+differ=[0]*M
 count=0
 idx=0
 for work in range(len(lst)):
     start=lst[work][0]
     end=lst[work][1]
     for j in range(len(menlst)):
-        accept[j]=start-menlst[j]
+        differ[j]=start-menlst[j]
 
-    c= float("inf")
-    for k in range(len(accept)):
-        if accept[k]<c and accept[k]>=0:
-            c=accept[k]
+    time=float("inf")
+    for k in range(len(differ)):
+        if differ[k]<time and differ[k]>=0:
+            time=differ[k]
             idx=k
-    if menlst[idx]<=start and c>=0:
+    if menlst[idx]<=start and time>=0:
         menlst[idx]=end
         count+=1
     idx=0
 
 outfile.write(f"{count}")
+
+inpfile.close()
+outfile.close()
