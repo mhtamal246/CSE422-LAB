@@ -18,16 +18,25 @@ for i in range(len(lst)):
         if lst[j][1]<lst[sml][1]:
             sml=j
     lst[i],lst[sml]=lst[sml],lst[i]
-print(lst)
-menlst=[0]*M
-count=0
 
-for work in lst:
-    start=work[0]
-    end=work[1]
-    for i in range(len(menlst)):
-        if menlst[i]<=start:
-            menlst[i]=end
-            count+=1
-            break
-print(count)
+menlst=[0]*M
+accept=[0]*M
+count=0
+idx=0
+for work in range(len(lst)):
+    start=lst[work][0]
+    end=lst[work][1]
+    for j in range(len(menlst)):
+        accept[j]=start-menlst[j]
+
+    c= float("inf")
+    for k in range(len(accept)):
+        if accept[k]<c and accept[k]>=0:
+            c=accept[k]
+            idx=k
+    if menlst[idx]<=start and c>=0:
+        menlst[idx]=end
+        count+=1
+    idx=0
+
+outfile.write(f"{count}")
