@@ -1,5 +1,5 @@
-outfile=open('output4.txt','w')
-inpfile=open('input4.txt','r')
+outfile=open('output4.txt', 'w')
+inpfile=open('input4.txt', 'r')
 N=int(inpfile.readline())
 
 lst=[]

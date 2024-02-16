@@ -1,5 +1,5 @@
-inpfile=open("input(2.2).txt","r")
-outfile=open("output(2.2)).txt","w")
+inpfile=open("input(2.2).txt", "r")
+outfile=open("output(2.2)).txt", "w")
 
 n1=inpfile.readline()
 l1=inpfile.readline()
@@ -50,3 +50,6 @@ outfile.write(f"{res}")
 
 inpfile.close()
 outfile.close()
+
+# For sample input-2: at 4th line of the output there's a space
+#at the end so code gives error. please remove the space while checking.

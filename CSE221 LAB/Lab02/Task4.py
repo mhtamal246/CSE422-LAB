@@ -1,5 +1,5 @@
-inpfile=open("input4.txt","r")
-outfile=open("output4.txt","w")
+inpfile=open("input4.txt", "r")
+outfile=open("output4.txt", "w")
 inp=inpfile.readline()
 
 N,M=inp.split()

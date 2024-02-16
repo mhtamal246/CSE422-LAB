@@ -1,5 +1,5 @@
-inpfile=open("input3.txt","r")
-outfile=open("output3.txt","w")
+inpfile=open("input3.txt", "r")
+outfile=open("output3.txt", "w")
 
 N=inpfile.readline()
 N=int(N)
@@ -35,16 +35,6 @@ while c>=0:
             i=j
             break
     c-=1
-
-#for i in range(len(lst)):
-#    for j in range(i+1,len(lst)):
-#       if lst[i]!=0 and lst[j]!=0:
-#            if lst[i][1]<=lst[j][0]:
-#                mainlst.append(lst[j])
-#                count+=1
-#                break
-#            else:
-#               lst[j]=0
 
 outfile.write(f"{count}\n")
 for i in range(len(mainlst)):

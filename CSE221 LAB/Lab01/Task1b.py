@@ -1,6 +1,6 @@
-outfile=open('output1b.txt','w')
+outfile=open('output1b.txt', 'w')
 
-inpfile=open('input1b.txt','r')
+inpfile=open('input1b.txt', 'r')
 
 T=int(inpfile.readline())
 

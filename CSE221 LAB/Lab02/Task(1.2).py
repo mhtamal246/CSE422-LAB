@@ -1,5 +1,5 @@
-inpfile=open("input(1.2).txt","r")
-outfile=open("output(1.2)).txt","w")
+inpfile=open("input(1.2).txt", "r")
+outfile=open("output(1.2)).txt", "w")
 
 N= inpfile.readline()
 S= inpfile.readline()
