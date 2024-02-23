@@ -59,3 +59,6 @@ def merge(a1, a2):
 
 merged, max_sum = mergesort(lst)
 outfile.write(f"{max_sum}")
+
+inpfile.close()
+outfile.close()

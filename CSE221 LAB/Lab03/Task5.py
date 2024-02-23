@@ -42,3 +42,6 @@ for i in srt:
     stg+= str(i)+" "
 
 outfile.write(f"{stg[:len(stg)-1]}")
+
+inpfile.close()
+outfile.close()

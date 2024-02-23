@@ -47,3 +47,6 @@ for i in range(que):
     k=int(k)
     srt=quicksort(lst, 0, len(lst)-1,k-1)
     outfile.write(f"{srt}\n")
+
+inpfile.close()
+outfile.close()
