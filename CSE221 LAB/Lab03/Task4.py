@@ -12,38 +12,52 @@ for i in num:
 
 def mergesort(lst):
     if len(lst) <= 1:
-        return lst, 0  # Return the sorted list and inversion count
+        return lst, 0
     mid = len(lst) // 2
-    a1, inv1 = mergesort(lst[:mid])
-    a2, inv2 = mergesort(lst[mid:])
-    merged, inv = merge(a1, a2)
-    return merged, inv + inv1 + inv2  # Total inversion count
+    a1, max_sum1 = mergesort(lst[:mid])
+    a2, max_sum2 = mergesort(lst[mid:])
 
+
+    finalmax = max_sum1
+    if max_sum2 > finalmax:
+        finalmax = max_sum2
+    merged, cur_max = merge(a1, a2)
+    if cur_max > finalmax:
+        finalmax = cur_max
+    return merged, finalmax
 def merge(a1, a2):
-    i = 0
-    j = 0
-    sorted_lst = []
-    max_sum = 0  # Maximum sum of squared pairs
-    while (i < len(a1) and j < len(a2)):
-        if a1[i] + a2[j] ** 2 > max_sum:
-            max_sum = a1[i] + a2[j] ** 2
-        if a1[i] < a2[j]:
-            sorted_lst.append(a1[i])
-            i += 1
-        else:
-            sorted_lst.append(a2[j])
-            j += 1
+    comb = []
+    max_sum = 0
 
-    sorted_lst.extend(a1[i:])
-    sorted_lst.extend(a2[j:])
+    maxnum=float("-inf")
+    maxsq=float("-inf")
+    for i in a1:
+        if i>maxnum:
+            maxnum=i
+    for j in a2:
+        if j**2>maxsq:
+            maxsq=j**2
+    if maxnum+maxsq>max_sum:
+        max_sum= maxnum+maxsq
 
-    return sorted_lst, max_sum
+    comb.extend(a1[0:len(a1)])
+    comb.extend(a2[0:len(a2)])
+
+    nm = float("-inf")
+    sq = float("-inf")
+    idx=""
+    for x in range(len(comb)):
+        if comb[x]>nm:
+            nm=comb[x]
+            idx=x
+    for y in range(idx+1,len(comb)):
+        if comb[y]**2>sq:
+            sq=comb[y]**2
+
+    if nm+sq>max_sum:
+        max_sum= nm+sq
+
+    return comb, max_sum
 
 merged, max_sum = mergesort(lst)
-stg = " ".join(map(str, merged))
-outfile.write(stg)
-
-print("Maximum value of A[i] + A[j]^2:", max_sum)
-
-inpfile.close()
-outfile.close()
+outfile.write(f"{max_sum}")
