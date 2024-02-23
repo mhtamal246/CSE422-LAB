@@ -25,4 +25,4 @@ def mergesort(lst):
 num=mergesort(lst)
 outfile.write(f"{num[0]}")
 
-####Time complexity of my code is O(logn)####
+####Time complexity of my code is O(nlogn)####

@@ -2,7 +2,8 @@ inpfile = open("input6.txt", "r")
 outfile = open("output6.txt", "w")
 
 N = inpfile.readline()
-N = int(N)
+N = N.split(" ")
+N=int(N[0])
 
 num = inpfile.readline()
 num = num.split(" ")
@@ -38,7 +39,8 @@ def partition(lst, p1,p2):
     return j
 
 que=inpfile.readline()
-que=int(que)
+que=que.split(" ")
+que=int(que[0])
 
 for i in range(que):
     k=inpfile.readline()
