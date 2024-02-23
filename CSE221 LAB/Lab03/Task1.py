@@ -32,7 +32,6 @@ def merge(a1,a2):
 
     sorted.extend(a1[i:len(a1)])
     sorted.extend(a2[j:len(a2)])
-
     return sorted
 merged=mergesort(lst)
 stg=""
@@ -40,3 +39,6 @@ for i in merged:
     stg+=str(i)+" "
 
 outfile.write(f"{stg[:len(stg)-1]}")
+
+inpfile.close()
+outfile.close()

@@ -17,19 +17,24 @@ def quicksort(lst, p1, p2):
         quicksort(lst, part+1, p2)
     return lst
 def partition(lst, p1,p2):
-    pivot=lst[p2]
-    i=p1-1
-    for j in range(p1,p2):
-        if lst[j]<=pivot:
-            i=i+1
+    pivot=lst[p1]
+    i=p1+1
+    j=p2
+    while True:
+        while i<=j and lst[i]<=pivot:
+            i+=1
+        while i<=j and lst[j]>=pivot:
+            j-=1
+        if i<=j:
             temp=lst[i]
             lst[i]=lst[j]
             lst[j]=temp
-
-    tmp=lst[i+1]
-    lst[i+1]=lst[p2]
-    lst[p2]=tmp
-    return i+1
+        else:
+            break
+    tmp=lst[p1]
+    lst[p1]=lst[j]
+    lst[j]=tmp
+    return j
 
 srt=quicksort(lst, 0, len(lst)-1)
 stg=""

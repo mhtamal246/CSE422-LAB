@@ -16,11 +16,10 @@ def mergesort(lst):
     mid = len(lst) // 2
     a1, max_sum1 = mergesort(lst[:mid])
     a2, max_sum2 = mergesort(lst[mid:])
-
-
     finalmax = max_sum1
     if max_sum2 > finalmax:
         finalmax = max_sum2
+
     merged, cur_max = merge(a1, a2)
     if cur_max > finalmax:
         finalmax = cur_max
@@ -56,7 +55,6 @@ def merge(a1, a2):
 
     if nm+sq>max_sum:
         max_sum= nm+sq
-
     return comb, max_sum
 
 merged, max_sum = mergesort(lst)
