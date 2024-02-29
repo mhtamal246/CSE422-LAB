@@ -1,6 +1,6 @@
-import queue
-inpfile=open("input2.txt","r")
-outfile=open("output2.txt","w")
+
+inpfile=open("input3.txt","r")
+outfile=open("output3.txt","w")
 
 N=inpfile.readline()
 N=N.split(" ")
@@ -32,23 +32,22 @@ for i in range(edge-1):
         if num1 not in lstt[num2]:
             lstt[num2].append(num1)
 
-
+print(lstt)
 visited=[False]*(node+1)
-qu = queue.Queue()
-qu.put(start)
 final=[]
-while not qu.empty():
-    cur = qu.get()
-    if visited[cur] == False:
-        final.append(cur)
-        visited[cur] = True
-        if lstt[cur]!=0:
-            for i in lstt[cur]:
-                if visited[i] == False:
-                    qu.put(i)
+def DFS(start, visited, lstt, final=[]):
+    if lstt[start]!=0:
+        if visited[start]==False:
+            visited[start]=True
+            final.append(start)
+            for i in lstt[start]:
+                DFS(i,visited,lstt,final)
 
+    return final
 
-for i in final:
+fin=DFS(start,visited,lstt,final)
+
+for i in fin:
     outfile.write(f"{i} ")
 
 inpfile.close()

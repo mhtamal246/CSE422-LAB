@@ -32,3 +32,5 @@ for i in range(len(lstt)):
         outfile.write(f"{count}: {stg[1:-1]}\n")
         count+=1
 
+inpfile.close()
+outfile.close()
