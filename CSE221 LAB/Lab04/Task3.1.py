@@ -35,20 +35,21 @@ for i in range(edge-1):
 
 visited=[False]*(node+1)
 final=[]
-def DFS(start, visited, lstt, final=[]):
-    if lstt[start]!=0:
-        if visited[start]==False:
-            visited[start]=True
-            final.append(start)
-            for i in lstt[start]:
-                DFS(i,visited,lstt,final)
+stack=[]
+stack.append(start)
+while len(stack)>0:
+    cur=stack.pop()
+    if visited[cur]==False:
+        final.append(cur)
+        visited[cur] = True
+        if lstt[cur]!=0:
+            c=lstt[cur]
+            for i in range(len(c)-1,-1,-1):
+                stack.append(c[i])
 
-    return final
+print(final)
 
-fin=DFS(start,visited,lstt,final)
 
-for i in fin:
-    outfile.write(f"{i} ")
 
 inpfile.close()
 outfile.close()
