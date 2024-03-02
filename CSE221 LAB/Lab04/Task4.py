@@ -25,22 +25,25 @@ for i in range(edge-1):
         if num2 not in lstt[num1]:
             lstt[num1].append(num2)
 print(lstt)
-visited=[False]*(node+1)
-final=[]
-stack=[]
-stack.append(start)
+visited=[]
+def DFS(start, visited, lstt):
+    if start in visited:
+        return "YES"
+    visited.append(start)
+    if lstt[start] != 0:
+        for i in lstt[start]:
+            d = DFS(i, visited, lstt)
+            if d == "YES":
+                return "YES"
 
-while len(stack)>0:
-    cur=stack.pop()
-    if visited[cur]==False:
-        final.append(cur)
-        visited[cur] = True
-        if lstt[cur]!=0:
-            for i in lstt[cur]:
-                if i not in stack:
-                    stack.append(i)
+    for i in range(len(visited)):
+        if visited[i]==start:
+            visited.pop(i)
+    return "NO"
 
-print(final)
+fin=DFS(start,visited,lstt)
+
+print(fin)
 
 
 
