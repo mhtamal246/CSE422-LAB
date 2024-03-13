@@ -33,11 +33,11 @@ for i in range(edge-1):
         if num1 not in lstt[num2]:
             lstt[num2].append(num1)
 
-
 visited=[False]*(node+1)
 qu = queue.Queue()
 qu.put(start)
 final=[]
+
 while not qu.empty():
     cur = qu.get()
     if visited[cur] == False:
@@ -45,10 +45,7 @@ while not qu.empty():
         visited[cur] = True
         if lstt[cur]!=0:
             for i in lstt[cur]:
-                if visited[i] == False:
-                    qu.put(i)
-
-
+                qu.put(i)
 for i in final:
     outfile.write(f"{i} ")
 

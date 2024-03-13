@@ -34,23 +34,23 @@ for i in range(edge-1):
         if num1 not in lstt[num2]:
             lstt[num2].append(num1)
 
-start=1  #always starts at city 1
+start=1          ###always starts at city 1
 des=int(N[2])
 visited=[False]*(node+1)
+parent=[0]*(node+1)
 qu = queue.Queue()
 qu.put(start)
-distance=[]
 visited[start]=True
-parent=[-1]*(node+1)
 parent[start]=-1
 
 while not qu.empty():
     cur = qu.get()
-    for i in lstt[cur]:
-        if visited[i]==False:
-            visited[i]=True
-            parent[i]=cur
-            qu.put(i)
+    if lstt[cur]!=0:
+        for i in lstt[cur]:
+            if visited[i]==False:
+                visited[i]=True
+                parent[i]=cur
+                qu.put(i)
 c=des
 path=[]
 path.append(c)
@@ -59,11 +59,16 @@ while c!=start :
     c=parent[c]
     path.append(c)
     time+=1
-path.reverse()
+
+rev=[]
+for i in range(len(path)-1,-1,-1):
+    rev.append(path[i])
 
 stg=""
-for i in path:
+for i in rev:
     stg+=str(i)+" "
 
 outfile.write(f"Time: {time}\n")
 outfile.write(f"Shortest Path: {stg[:len(stg)-1]}")
+inpfile.close()
+outfile.close()

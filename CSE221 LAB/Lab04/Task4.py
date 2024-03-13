@@ -24,7 +24,7 @@ for i in range(edge-1):
     else:
         if num2 not in lstt[num1]:
             lstt[num1].append(num2)
-print(lstt)
+
 visited=[]
 def DFS(start, visited, lstt):
     if start in visited:
@@ -43,11 +43,7 @@ def DFS(start, visited, lstt):
 
 fin=DFS(start,visited,lstt)
 
-print(fin)
+outfile.write(f"{fin}")
 
-
-
-
-
-
-
+inpfile.close()
+outfile.close()

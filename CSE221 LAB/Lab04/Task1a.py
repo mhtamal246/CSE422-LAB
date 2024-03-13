@@ -22,6 +22,15 @@ for steps in range(E):
             if i==r and j==c:
                 arr[i][j]=w
 
-outfile.write(f"{arr}")
+def helper(lst):
+    stg=""
+    for i in lst:
+        stg+=str(i)+" "
+    outfile.write(f"{stg}\n")
+
+for i in arr:
+    helper(i)
+
+
 inpfile.close()
 outfile.close()
