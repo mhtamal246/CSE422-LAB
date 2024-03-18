@@ -35,6 +35,7 @@ for i in range (r):
                 Count = CurMax
             CurMax = 0
 
-outfile.write(str(Count))
+outfile.write(f"{Count}")
+
 inpfile.close()
 outfile.close()
