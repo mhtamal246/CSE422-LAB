@@ -1,27 +1,40 @@
 import numpy as np
-inpfile=open("input6.txt","r")
-outfile=open("output6.txt","w")
+inpfile = open('input6.txt', 'r')
+outfile= open('output6.txt', 'w')
 
-row,col=inpfile.readline().split(" ")
-row,col=int(row),int(col)
+r, c = inpfile.readline().split(' ')
+r, c = int(r), int(c)
+arr = np.zeros((r,c), dtype = 'str')
+for i in range (r):
+    temp = inpfile.readline()
+    if i!= (r-1):
+        temp = temp[0:len(temp)-1]
+    for j in range (c):
+        arr[i][j] = temp[j]
 
-arr=np.zeros((row,col),dtype=str)
+Count = 0
+CurMax = 0
+def dfs(i, j, prevColor, newColor):
+    global CurMax
+    if i<0 or i>r-1 or j<0 or j>c-1 or arr[i][j] == newColor or arr[i][j] not in prevColor:
+        return
+    if arr[i][j] == 'D':
+        CurMax+=1
+    arr[i][j] = newColor
+    dfs(i+1, j,prevColor, newColor)
+    dfs(i-1, j,prevColor, newColor)
+    dfs(i, j+1,prevColor, newColor)
+    dfs(i, j-1,prevColor, newColor)
 
-def helper(lst,r,c=0):
-      for val in lst:
-            arr[r][c]=val
-            c+=1
-for i in range(row):
-      lst=[]
-      n=inpfile.readline()
-      for j in n:
-            lst.append(str(j))
-      helper(lst[:-1],i)
+path = ['D','.']
+for i in range (r):
+    for j in range (c):
+        if arr[i][j] in path:
+            dfs(i, j, path, 'W')
+            if CurMax>Count:
+                Count = CurMax
+            CurMax = 0
 
-count=[]
-for i in range(row):
-      for j in range(col):
-            if arr[i][j]=="." or arr[i][j]=="D":
-                  if arr[i]==1:
-
-def DFS(left,right,up,down):
+outfile.write(str(Count))
+inpfile.close()
+outfile.close()
