@@ -10,25 +10,22 @@ def binary(arr,fnd,count=0):
         if arr[mid]==fnd:
             count+=1
             for i in range(mid-1,0,-1):
-                if arr[i]==fnd:
-                    count+=1
-                else:
+                if arr[i]<fnd:
                     break
+                else:
+                    count+=1
             for i in range(mid+1,len(arr)-1):
-                if arr[i]==fnd:
-                    count+=1
-                else:
+                if arr[i]>fnd:
                     break
+                else:
+                    count+=1
             return count
         elif arr[mid]<fnd:
-            left=mid-1
-        elif arr[mid>fnd]:
-            right=mid+1
-    return count
+            left=mid+1
+        elif arr[mid]>fnd:
+            right=mid-1
 
-
-
-arr = [1, 3, 4, 5, 13, 15,16,16, 16, 16, 16, 16,16,16, 19, 21, 21, 23]
+arr = [1, 3, 4, 5, 13, 15,16,16,16,16,16, 19, 21, 21, 23]
 res=binary(arr,16)
 
 print(res)

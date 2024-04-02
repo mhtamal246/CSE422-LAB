@@ -1,11 +1,11 @@
 
-def divide(lst,final=0):
-    if len(lst) <= 1:
-        return lst,0
+def divide(stg,final=0):
+    if len(stg) <= 1:
+        return stg,0
 
-    mid = len(lst) // 2
-    left,count1 = divide(lst[0:mid])
-    right,count2 = divide(lst[mid:])
+    mid = len(stg) // 2
+    left,count1 = divide(stg[0:mid])
+    right,count2 = divide(stg[mid:])
 
     conquered,curCount=conquer(left,right)
 
@@ -16,22 +16,42 @@ def divide(lst,final=0):
 
 def conquer(left, right):
     count=0
-    lis=[]
-    lis.extend(left)
-    lis.extend(right)
+
+    L_cnt=0
+    for i in left:
+        if i=="0":
+            L_cnt+=1
+        else:
+            if L_cnt>count:
+                count=L_cnt
+            L_cnt=0
+
+    R_cnt=0
+    for i in right:
+        if i=="0":
+            R_cnt+=1
+        else:
+            if R_cnt>count:
+                count=R_cnt
+            R_cnt=0
 
     cnt=0
-    for i in lis:
-        if i==0:
+    for i in range(len(left)-1,-1,-1):
+        if left[i]=="0":
             cnt+=1
         else:
-            if cnt>count:
-                count=cnt
-            cnt=0
+            break
+    for j in right:
+        if j=="0":
+            cnt+=1
+        else:
+            break
 
-    return lis,count
+    if cnt>count:
+        count=cnt
 
-stg = "101000000011"
-lst = [int(i) for i in stg]
-res,count = divide(lst)
+    return left+right,count
+
+stg = "10101010101010"
+res,count = divide(stg)
 print(count)
