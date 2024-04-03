@@ -56,4 +56,4 @@ if flag==False:
     for i in toposort:
         outfile.write(f"{i} ")
 else:
-    outfile.write(f"IMPOSSIBLE")
+    outfile.write("IMPOSSIBLE")
