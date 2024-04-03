@@ -40,7 +40,6 @@ while len(data)>0:
                 if indeg[i]==0:
                     data.append(i)
 
-
 if len(toposort)!=N:
     outfile.write("IMPOSSIBLE")
 else:
