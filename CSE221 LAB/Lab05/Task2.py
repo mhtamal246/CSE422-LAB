@@ -1,6 +1,6 @@
-import queue
-inpfile=open("input1b.txt","r")
-outfile=open("output1b.txt","w")
+import heapq
+inpfile=open("input2.txt","r")
+outfile=open("output2.txt","w")
 
 N,M=inpfile.readline().split(" ")
 N,M=int(N),int(M)
@@ -15,22 +15,22 @@ for i in range(M):
         lst[a]=[b]
     else:
         lst[a].append(b)
-
 indeg=[0]* (N+1)
 for i in lst:
     if i!=0:
         for j in i:
             indeg[j]+=1
 
-Q=queue.Queue()
+data=[]
 visited=[False]* (N+1)
 toposort=[]
 for i in range(1,len(indeg)):
     if indeg[i]==0:
-        Q.put(i)
+        data.append(i)
 
-while not Q.empty():
-    q=Q.get()
+while len(data)>0:
+    heapq.heapify(data)
+    q= data.pop(0)
     if visited[q]==False:
         toposort.append(q)
         visited[q]=True
@@ -38,11 +38,10 @@ while not Q.empty():
             for i in lst[q]:
                 indeg[i]-=1
                 if indeg[i]==0:
-                    Q.put(i)
+                    data.append(i)
 
 if len(toposort)!=N:
     outfile.write("IMPOSSIBLE")
 else:
     for i in toposort:
         outfile.write(f"{i} ")
-
