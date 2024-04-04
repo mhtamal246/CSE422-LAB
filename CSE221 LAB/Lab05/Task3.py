@@ -17,7 +17,7 @@ for i in range(M):
 for i in range(1, len(lst)):
     if lst[i]==0:
         lst[i]=[i]
-print(lst)
+
 rev=[0]* (N+1)
 for i in range(len(lst)):
     if lst[i]!=0:
@@ -27,8 +27,6 @@ for i in range(len(lst)):
                 rev[j].append(i)
             else:
                 rev[j]=[i]
-
-print(rev)
 
 visited=[False]* (N+1)
 ref=[]
@@ -44,7 +42,6 @@ def SCC1(start, lst, visited):
 for i in range(1, len(lst)):
     SCC1(i,lst,visited)
 ref.reverse()
-print(ref)
 visited=[False] * (N+1)
 scc=[]
 ls=[]
