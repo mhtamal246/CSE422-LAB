@@ -57,3 +57,6 @@ if flag==False:
         outfile.write(f"{i} ")
 else:
     outfile.write("IMPOSSIBLE")
+
+inpfile.close()
+outfile.close()

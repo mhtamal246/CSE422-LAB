@@ -46,3 +46,5 @@ else:
     for i in toposort:
         outfile.write(f"{i} ")
 
+inpfile.close()
+outfile.close()

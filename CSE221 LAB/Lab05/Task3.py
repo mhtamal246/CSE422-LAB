@@ -67,3 +67,6 @@ for i in scc:
         for j in i:
             outfile.write(f"{j} ")
         outfile.write(f"\n")
+
+inpfile.close()
+outfile.close()
