@@ -29,9 +29,9 @@ for i in range(1,len(indeg)):
         data.append(i)
 
 while len(data)>0:
-    heapq.heapify(data)
-    q= data.pop(0)
-    if visited[q]==False:
+    heapq.heapify(data)                 #basically we will perform a bfs traversal only difference is we will use a heapQueue data structure
+    q= data.pop(0)                      #in heap-queue everytime we take a value from the front we always will get the smallest one
+    if visited[q]==False:               #this will help us to sort it lexiographically
         toposort.append(q)
         visited[q]=True
         if lst[q]!=0:

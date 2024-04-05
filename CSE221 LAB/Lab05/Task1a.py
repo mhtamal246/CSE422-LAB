@@ -13,18 +13,18 @@ for i in range(M):
     if lst[a]==0:
         lst[a]=[b]
     else:
-        lst[a].append(b)
+        lst[a].append(b)   #this part will create the adjacency list
 
 toposort=[]
 cyc= [0]* (N+1)
 def topo_DFS(start, lst, cyc):
     global toposort,visited
-    if cyc[start]==1:
-        return "yes"
-    cyc[start] = 1
+    if cyc[start]==1:               #to detect cycle we used a list of 0,1,2
+        return "yes"                #when the vertices is being visited then it will become 0 to 1 and when if fully explored or backtracking then it will become 2
+    cyc[start] = 1                  #if that doesn't backtrack and find a cyc[value] with 1 then we can say that there is a loop
     if lst[start]==0:
-        cyc[start] = 2
-        return start
+        cyc[start] = 2              #using dfs to do topological sort, we can pick any node, then start the dfs, when it reaches to the end then it will start backtracking
+        return start                #when it backtracks, that value is actually the last value of a particaular sequence. if we store that in a list and we will find a topo-sort
     if visited[start]==False:
         visited[start]=True
         for j in lst[start]:

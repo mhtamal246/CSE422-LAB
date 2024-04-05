@@ -14,14 +14,14 @@ for i in range(M):
     else:
         lst[a].append(b)
 
-for i in range(1, len(lst)):
-    if lst[i]==0:
+for i in range(1, len(lst)):     #this part will find if there's any node that is disconnected singly nodes
+    if lst[i]==0:                  #if there is then it will put that node into the adjacency list
         lst[i]=[i]
 
 rev=[0]* (N+1)
 for i in range(len(lst)):
-    if lst[i]!=0:
-        idx=lst[i]
+    if lst[i]!=0:                   #this part will change the direction of the edges
+        idx=lst[i]                  #if there's a node going 1 to 3 then this part will create another reverse list that is going 3 to 1
         for j in idx:
             if rev[j]!=0:
                 rev[j].append(i)
@@ -30,8 +30,8 @@ for i in range(len(lst)):
 
 visited=[False]* (N+1)
 ref=[]
-def SCC1(start, lst, visited):
-    global ref
+def SCC1(start, lst, visited):          #in the part dfs call we will traverse normally using dfs
+    global ref                          #when traversing we will put current node into a ref list which is our reference list
     if visited[start]==False:
         visited[start]=True
         ref.append(start)
@@ -45,9 +45,9 @@ ref.reverse()
 visited=[False] * (N+1)
 scc=[]
 ls=[]
-def SCC2(start, rev, visited):
-    global scc, ls
-    if visited[start]==False:
+def SCC2(start, rev, visited):          #2nd time we will pop a node from the reference list and perform a dfs at that reverse list
+    global scc, ls                      #while traversing we will create a list of list where we will put the SCCs
+    if visited[start]==False:           # while traversing if we reach to the dead-end then we can say that till that portion we have our 1 strongly connected part
         visited[start]=True
         ls.append(start)
         if rev[start]!=0:
