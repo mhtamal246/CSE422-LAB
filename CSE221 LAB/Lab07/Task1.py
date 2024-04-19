@@ -1,5 +1,5 @@
 inpfile= open("input1.txt","r")
-outfile= open("outfile1.txt","w")
+outfile= open("output1.txt","w")
 
 ppl, qu= inpfile.readline().split(" ")
 ppl, qu= int(ppl), int(qu)
