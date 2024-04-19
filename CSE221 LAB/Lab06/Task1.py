@@ -45,7 +45,6 @@ while not qu.empty():
         for i in range(len(dij_lst)):
             if dij_lst[i]==mini:
                 idx=i
-                break
         qu.put(idx)
 
 for i in range(1,len(visited)):

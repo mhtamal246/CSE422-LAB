@@ -76,7 +76,6 @@ def alice(lst,A):
             for i in range(len(allst)):
                 if allst[i] == mini:
                     idx = i
-                    break
             qu.put(idx)
 
     return allst
