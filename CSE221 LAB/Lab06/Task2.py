@@ -97,7 +97,6 @@ if time==float('inf'):
     outfile.write("Impossible")
 else:
     outfile.write(f"Time {time}\nNode {node}")
-print(time)
-print(node)
-print(bo)
-print(al)
+
+inpfile.close()
+outfile.close()

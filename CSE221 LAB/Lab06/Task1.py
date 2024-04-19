@@ -53,3 +53,6 @@ for i in range(1,len(visited)):
 
 for i in range(1,len(dij_lst)):
     outfile.write(f"{dij_lst[i]} ")
+
+inpfile.close()
+outfile.close()

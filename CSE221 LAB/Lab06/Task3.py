@@ -50,3 +50,6 @@ while not qu.empty():
         qu.put(idx)
 
 outfile.write(f"{dij_lst[len(dij_lst)-1]}")
+
+inpfile.close()
+outfile.close()
