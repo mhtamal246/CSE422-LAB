@@ -82,8 +82,23 @@ def alice(lst,A):
     return allst
 
 al=alice(lst,A)
+time=float("inf")
+node=0
+for i in range(1,len(bo)):
+    if bo[i]!=float('inf') and al[i]!=float('inf'):
+        if bo[i]<time and al[i]<time:
+            if bo[i]>al[i]:
+                time=bo[i]
+            else:
+                time=al[i]
+            node=i
+
+
+if time==float('inf'):
+    outfile.write("Impossible")
+else:
+    outfile.write(f"Time {time}\nNode {node}")
+print(time)
+print(node)
 print(bo)
 print(al)
-print(visited)
-
-
