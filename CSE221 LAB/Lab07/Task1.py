@@ -28,3 +28,6 @@ for i in range(qu):
     DSU(parent, n1,n2)
     count=size[find(parent,n1)]
     outfile.write(f"{count}\n")
+
+inpfile.close()
+outfile.close()
