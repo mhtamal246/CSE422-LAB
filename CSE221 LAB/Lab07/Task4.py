@@ -25,6 +25,7 @@ for target in range(1,len(dp)):
 
 outfile.write(f"{dp[len(dp)-1]}")
 
-
+inpfile.readline()
+outfile.readline()
 
 
