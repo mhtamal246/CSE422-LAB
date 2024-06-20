@@ -29,7 +29,6 @@ visited=[]
 def DFS(start, visited, lstt):
     if start in visited:
         return "YES"
-    print(start)
     visited.append(start)
     if lstt[start] != 0:
         for i in lstt[start]:

@@ -35,10 +35,7 @@ while not qu.empty():
             if dij_lst[des]==float('+inf'):
                 dij_lst[des]=dij_lst[cur]+weight
                 minlst.append(dij_lst[des])
-            else:
-                if dij_lst[cur]+weight<dij_lst[des]:
-                    dij_lst[des]=dij_lst[cur]+weight
-                    minlst.append(dij_lst[des])
+
     minlst.sort()
     if len(minlst)>0:
         mini=minlst.pop(0)

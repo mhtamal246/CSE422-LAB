@@ -32,13 +32,9 @@ def bob(lst,visited,B):
         if lst[cur] != 0:
             for i in lst[cur]:
                 des, weight = i
-                if boblst[des] == float('+inf'):
+                if boblst[cur] + weight < boblst[des]:
                     boblst[des] = boblst[cur] + weight
                     minlst.append(boblst[des])
-                else:
-                    if boblst[cur] + weight < boblst[des]:
-                        boblst[des] = boblst[cur] + weight
-                        minlst.append(boblst[des])
         minlst.sort()
         if len(minlst) > 0:
             mini = minlst.pop(0)
@@ -63,13 +59,10 @@ def alice(lst,A):
         if lst[cur] != 0:
             for i in lst[cur]:
                 des, weight = i
-                if allst[des] == float('+inf'):
+
+                if allst[cur] + weight < allst[des]:
                     allst[des] = allst[cur] + weight
                     minlst.append(allst[des])
-                else:
-                    if allst[cur] + weight < allst[des]:
-                        allst[des] = allst[cur] + weight
-                        minlst.append(allst[des])
         minlst.sort()
         if len(minlst) > 0:
             mini = minlst.pop(0)
@@ -92,7 +85,8 @@ for i in range(1,len(bo)):
                 time=al[i]
             node=i
 
-
+print(bo)
+print(al)
 if time==float('inf'):
     outfile.write("Impossible")
 else:

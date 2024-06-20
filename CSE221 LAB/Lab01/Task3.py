@@ -18,12 +18,11 @@ for i in range(len(lst)):
     for j in range(i, len(lst)):
         if lst[j][1]>lst[lrg][1]:
             lrg=j
-        if lst[j][1]==lst[i][1]:
-            if lst[i][0]>lst[j][0]:
-                print(lst[i][0])
+        if lst[j][1]==lst[lrg][1]:
+            if lst[lrg][0]>lst[j][0]:
                 tmp=lst[j]
-                lst[j]=lst[i]
-                lst[i]=tmp
+                lst[j]=lst[lrg]
+                lst[lrg]=tmp
 
     temp=lst[i]
     lst[i]=lst[lrg]

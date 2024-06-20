@@ -1,15 +1,16 @@
-output_file=open('output1a.txt', 'w')
 
-file_object= open('input1a.txt', 'r')
+inpfile=open('input1a.txt','r')
+outfile=open('output1a.txt','w')
 
-T=int(file_object.readline())
+T=int(inpfile.readline())
+
 
 for i in range(T):
-    num=int(file_object.readline())
-    if num%2==0:
-        res=f"\n{num} is an Even number"
-        output_file.write(res)
+    line=int(inpfile.readline())
+    if line%2==0:
+        outfile.write(f"{line} is a even number\n")
     else:
-        res=f"\n{num} is an Odd number"
-        output_file.write(res)
+        outfile.write(f"{line} is a odd number\n")
 
+inpfile.close()
+outfile.close()
