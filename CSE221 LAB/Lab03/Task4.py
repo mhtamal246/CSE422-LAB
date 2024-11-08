@@ -44,7 +44,7 @@ def merge(a1, a2):
 
     nm = float("-inf")
     sq = float("-inf")
-    idx=""
+    idx=None
     for x in range(len(comb)):
         if comb[x]>nm:
             nm=comb[x]
