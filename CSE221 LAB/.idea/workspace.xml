@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8edfdd5-8898-4bf2-9c79-4696e76aa8f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../CSE422 LAB/LAB01/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab06/Task1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab06/Task1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CSE422 LAB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CSE422 LAB/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CSE422 LAB/LAB01/Task.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CSE422 LAB/LAB01/Task.py" afterDir="false" />
     </list>
@@ -15,25 +13,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2oeBBMgCvaaeoy2WjV2ceSV87Im" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Task1.executor": "Run",
-    "Python.Task1a.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "E:/Pycharm/CSE221 LAB",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Task1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Task1a.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Pycharm/CSE221 LAB&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -51,6 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731220024761</updated>
       <workItem from="1731220025809" duration="158000" />
+      <workItem from="1731240045311" duration="20000" />
     </task>
     <servers />
   </component>
