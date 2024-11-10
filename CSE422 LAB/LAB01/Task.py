@@ -22,6 +22,4 @@ while True:
             dict_for_cost[line[0]].append( (line[i],int(line[i+1])) )
 
 #This portion is for A* search Algorithm
-print(dict_for_hueristic)
-
 
