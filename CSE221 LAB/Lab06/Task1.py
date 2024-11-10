@@ -16,7 +16,7 @@ for i in range(M):
         lst[a]=[(b,w)]
     else:
         lst[a].append((b,w))
-
+print(lst)
 start=inpfile.readline()
 start=int(start)
 
